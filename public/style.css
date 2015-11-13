@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?co6d5w');
+  src:url('fonts/icomoon.eot?co6d5w#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?co6d5w') format('truetype'),
+  url('fonts/icomoon.woff?co6d5w') format('woff'),
+  url('fonts/icomoon.svg?co6d5w#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.descriptonText {
+  color: red;
+}
+.main{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  s-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.title {
+  opacity: 0;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 0.7s;
+  -moz-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+
+  text-align: center;
+}
+.image{
+  opacity:0;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.9s;
+  -moz-animation-duration:0.9s;
+  animation-duration:0.9s;
+
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.description{
+  opacity:0;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1.1s;
+  -moz-animation-duration:1.1s;
+  animation-duration:1.1s;
+
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.forwardControl:before{
+  content: "\f078";
+  width: 38px;
+  height: 38px;
+  font-size: 25px;
+  line-height: 1em;
+  margin: 0px 0 0 0px;
+  padding: 0;
+  display: block;
+}
+.backControl:before {
+  content: "\f0a4";
+  width: 38px;
+  height: 38px;
+  font-size: 25px;
+  line-height: 1em;
+  margin: 0px 0 0 0px;
+  padding: 0;
+}
+.controls-right{
+  position:absolute;
+  top: 45%;
+  left: 71%;
+  s-transform: translate(-45%, -50%);
+  -webkit-transform: translate(-45%, -50%);
+  -moz-transform: translate(-45%, -50%);
+  transform: translate(-45%, -50%);
+  display: block;
+}
+.controls-left{
+  position:absolute;
+  top: 45%;
+  left: 29%;
+  s-transform: translate(-45%, -50%);
+  -webkit-transform: translate(-45%, -50%);
+  -moz-transform: translate(-45%, -50%);
+  transform: translate(-45%, -50%);
+  display: block;
+}
+.controls{
+  opacity: 0;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 0.7s;
+  -moz-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+
+  -webkit-animation-delay: 1.3s;
+  -moz-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
