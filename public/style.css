@@ -116,6 +116,7 @@ a {
   margin: 0px 0 0 0px;
   padding: 0;
   display: block;
+  color: white;
 }
 .backControl:before {
   content: "\f0a4";
@@ -125,6 +126,7 @@ a {
   line-height: 1em;
   margin: 0px 0 0 0px;
   padding: 0;
+  color: white;
 }
 .controls-right{
   position:absolute;
@@ -164,4 +166,10 @@ a {
   -webkit-animation-delay: 1.3s;
   -moz-animation-delay: 1.3s;
   animation-delay: 1.3s;
+}
+.descriptionText{
+  color: white;
+}
+.title{
+  color: white;
 }
