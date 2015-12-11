@@ -25,8 +25,12 @@ var app = {
 
         document.getElementsByClassName('image')[0].setAttribute("src", src);
         document.getElementsByClassName('forwardControl')[0].setAttribute("style", "display:none");
-        if(images < 1)
+
+        console.log(images.length);
+        if(images.length <= 1)
+        {
             document.getElementsByClassName('backControl')[0].setAttribute("style", "display:none");
+        }
     },
     back: function(){
         imagesIndex = imagesIndex + 1;
@@ -67,7 +71,7 @@ var app = {
         var daysUntilEnd = Math.floor(moment.duration(msUntilStart).asDays());
         console.log("daysUntilEnd: " + daysUntilEnd);
 
-        if(daysUntilEnd !== daysToRemove)
+        if(daysUntilEnd != daysToRemove)
         {
             daysToRemove = daysUntilEnd;
             app.start();
