@@ -1,29 +1,31 @@
-/**
- * Created by James on 2015-11-13.
- *
- */
-
-var imageLib = ['1.jpg', '2.png', '3.png', '4.jpg', '5.jpg', '6.jpg'];
 var images;
-var imagesIndex;
+var story;
+var storyIndex;
 var intervalId;
-var src;
 var daysToRemove;
 
 window.onload = function () {
+    for(var i = 0; i < imageLib.length; i++)
+    {
+        //console.log("add story object: " + titleLib[i] + " " + imageLib[i] + " " + descriptionLib[i]);
+        storyLib.push(stories.buildStory(titleLib[i], imageLib[i], descriptionLib[i]));
+    }
+    console.log(storyLib);
+
     app.countdownTimer();
 };
 
 var app = {
     start: function(){
-        images = imageLib;
-        images = images.splice(daysToRemove);
-        console.log(images);
+        storyIndex = 0;
+        images = storyLib;
+        story = images.splice(daysToRemove);
+        console.log(story);
 
-        imagesIndex = 0;
-        src = "images/" + images[0];
-
-        document.getElementsByClassName('image')[0].setAttribute("src", src);
+        document.getElementsByClassName('title')[0].innerHTML = story[0].title;
+        document.getElementsByClassName('descriptionText')[0].innerHTML = story[0].description;
+        document.getElementsByClassName('image')[0].setAttribute("src", "images/" + story[0].image);
+        document.getElementsByClassName('image')[1].setAttribute("src", "images/" + story[0].image);
         document.getElementsByClassName('forwardControl')[0].setAttribute("style", "display:none");
 
         console.log(images.length);
@@ -33,30 +35,41 @@ var app = {
         }
     },
     back: function(){
-        imagesIndex = imagesIndex + 1;
-        console.log(imagesIndex);
+        storyIndex = storyIndex + 1;
+        console.log(storyIndex);
 
-        var src = "images/" + images[imagesIndex];
-        document.getElementsByClassName('image')[0].setAttribute("src", src);
+        document.getElementsByClassName('title')[0].innerHTML = story[storyIndex].title;
+        document.getElementsByClassName('descriptionText')[0].innerHTML = story[storyIndex].description;
+        document.getElementsByClassName('image')[0].setAttribute("src", "images/" + story[storyIndex].image);
+        document.getElementsByClassName('image')[1].setAttribute("src", "images/" + story[storyIndex].image);
 
-        if(imagesIndex == images.length -1)
+        if(storyIndex == story.length -1)
         {
             document.getElementsByClassName('backControl')[0].setAttribute("style", "display:none");
             document.getElementsByClassName('forwardControl')[0].setAttribute("style", "display:block");
         }
-
+        else if(document.getElementsByClassName('forwardControl')[0].style.display == 'none')
+        {
+            document.getElementsByClassName('forwardControl')[0].setAttribute("style", "display:block");
+        }
     },
     forward: function () {
-        imagesIndex = imagesIndex - 1;
-        console.log(imagesIndex);
+        storyIndex = storyIndex - 1;
+        console.log(storyIndex);
 
-        var src = "images/" + images[imagesIndex];
-        document.getElementsByClassName('image')[0].setAttribute("src", src);
+        document.getElementsByClassName('title')[0].innerHTML = story[storyIndex].title;
+        document.getElementsByClassName('descriptionText')[0].innerHTML = story[storyIndex].description;
+        document.getElementsByClassName('image')[0].setAttribute("src", "images/" + story[storyIndex].image);
+        document.getElementsByClassName('image')[1].setAttribute("src", "images/" + story[storyIndex].image);
 
-        if(imagesIndex == 0)
+        if(storyIndex == 0)
         {
             document.getElementsByClassName('backControl')[0].setAttribute("style", "display:block");
             document.getElementsByClassName('forwardControl')[0].setAttribute("style", "display:none");
+        }
+        else
+        {
+            document.getElementsByClassName('backControl')[0].setAttribute("style", "display:block");
         }
     },
     countdownTimer: function(){
@@ -78,5 +91,21 @@ var app = {
         }
 
         intervalId = setInterval(app.countdownTimer, 60000);
+    },
+    imageClick: function(){
+        //$("#myModal").modal();
     }
 };
+/*
+//your code for stuff should go here
+$('#Fullscreen').css('height', $(document).outerWidth() + 'px');
+//for when you click on an image
+$('.myImg').click(function () {
+    var src = $(this).attr('src'); //get the source attribute of the clicked image
+    $('#Fullscreen img').attr('src', src); //assign it to the tag for your fullscreen div
+    $('#Fullscreen').fadeIn();
+});
+$('#Fullscreen').click(function () {
+    $(this).fadeOut(); //this will hide the fullscreen div if you click away from the image.
+});
+    */

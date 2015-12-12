@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Emmelis story</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="js/app.js"></script>
     <script src="lib/moment.min.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="js/app.js"></script>
+
 </head>
 <body id="body">
     <div class="main">
         <h1 class="title">Title</h1>
-        <img class="image" width="650" height="350" src="">
+        <img class="image" width="650" height="350" onclick="app.imageClick()" src="">
         <div class="description" style="width: 650px">
             <p class="descriptionText">
                 Lorem ipsum dolor sit amet, intellegat temporibus mei te. Ferri iisque voluptaria nam ut.
@@ -30,6 +36,28 @@
         </div>
         <div class="controls-left">
             <div onclick="app.back()" class="backControl icon-chevron-left"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <img class="image" width="350" height="250" src="">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
